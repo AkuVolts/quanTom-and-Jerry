@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class GameManager : MonoBehaviour
     float timer = 0f;
 
     [SerializeField] PlayerController player;
+    
+    [SerializeField] UnityEvent onWin;
 
     void Awake()
     {
@@ -20,13 +24,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject); 
+            Destroy(gameObject); 
         }
-    }
-
-    void Update()
-    {
-        
     }
 
     public void UpdateTimer()
@@ -38,6 +37,10 @@ public class GameManager : MonoBehaviour
         else
         {
             timer -= Time.deltaTime * decreaseRate;
+        }
+        if (HasWon())
+        {
+            onWin.Invoke();
         }
     }
 
