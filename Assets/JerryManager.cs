@@ -67,7 +67,7 @@ public class JerryManager : MonoBehaviour
 		    float randomRotate = Random.Range(-10f * (_maxJerryCountLevel - _jerryCountLevel), 10f * (_maxJerryCountLevel - _jerryCountLevel));
 		    float randomSpeedChange = Random.Range(-0.2f * (_maxJerryCountLevel - _jerryCountLevel), 0.2f * (_maxJerryCountLevel - _jerryCountLevel));
 		    jerry.Velocity = RotateVector(jerry.Velocity, randomRotate).normalized;
-		    jerry.Speed = Mathf.Clamp(jerry.Speed + randomSpeedChange, 1f, 16f);
+		    jerry.Speed = Mathf.Clamp(jerry.Speed + randomSpeedChange, 1f * (_maxJerryCountLevel - _jerryCountLevel) * 2, _jerryCountLevel * 2 - _jerryCountLevel * 1.6f);
 		    var addSpeed = jerry.Velocity * (jerry.Speed * Time.fixedDeltaTime);
 		    var position = jerry.Transform.position;
 		    var newPos = new Vector2(position.x, position.y) + addSpeed;
