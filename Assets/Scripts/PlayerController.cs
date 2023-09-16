@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] List<Animator> anim;
 
-    [SerializeField] SpriteRenderer rend;
+    [SerializeField] List<SpriteRenderer> rend;
     [SerializeField] GameObject duplicateLeft;
     [SerializeField] GameObject duplicateRight;
     [SerializeField] GameObject duplicateTop;
@@ -61,6 +61,11 @@ public class PlayerController : MonoBehaviour
         duplicateBottomRight.transform.localPosition = new Vector3(_rightXExtent - _leftXExtent, _bottomYExtent - _topYExtent, 0f);
         duplicateTopLeft.transform.localPosition = new Vector3(_leftXExtent - _rightXExtent, _topYExtent - _bottomYExtent, 0f);
         duplicateTopRight.transform.localPosition = new Vector3(_rightXExtent - _leftXExtent, _topYExtent - _bottomYExtent, 0f);
+
+        foreach (var a in anim)
+        {
+            a.speed = 0f;
+        }
     }
 
     // Update is called once per frame
@@ -144,17 +149,24 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     a.Play("Side");
-                    // flip the sprite if moving left
+
+                }
+                a.speed = rb.velocity.magnitude / 3;
+            }
+
+            foreach (var r in rend)
+            {
+                if (Mathf.Abs(rb.velocity.y) < Mathf.Abs(rb.velocity.x))
+                {
                     if (rb.velocity.x > 0)
                     {
-                        rend.flipX = true;
+                        r.flipX = true;
                     }
                     else
                     {
-                        rend.flipX = false;
+                        r.flipX = false;
                     }
                 }
-                a.speed = rb.velocity.magnitude / 3;
             }
         }
     }

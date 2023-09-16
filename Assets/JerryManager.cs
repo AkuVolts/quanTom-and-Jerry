@@ -8,7 +8,12 @@ public class JerryManager : MonoBehaviour
 {
 	public float coolDownTime;
 	private bool _inToggleCooldown = false;
-	private int _cacheJerryCertaintyChange;
+	private int _cacheJerryCountLevelDelta;
+
+	private int _jerryCountLevel = 1;
+
+	private int _maxJerryCountLevel = 5;
+	private int _minJerryCountLevel = 1;
 
 	public Transform topLeftAnchor;
 	public Transform bottomRightAnchor;
@@ -59,11 +64,11 @@ public class JerryManager : MonoBehaviour
     {
 	    foreach (var jerry in _jerries)
 	    {
-		    float randomRotate = Random.Range(-20f, 20f);
-		    float randomSpeedChange = Random.Range(-0.2f, 0.2f);
+		    float randomRotate = Random.Range(-10f * (_maxJerryCountLevel - _jerryCountLevel), 10f * (_maxJerryCountLevel - _jerryCountLevel));
+		    float randomSpeedChange = Random.Range(-0.2f * (_maxJerryCountLevel - _jerryCountLevel), 0.2f * (_maxJerryCountLevel - _jerryCountLevel));
 		    jerry.Velocity = RotateVector(jerry.Velocity, randomRotate).normalized;
-		    jerry.Speed = Mathf.Clamp(jerry.Speed + randomSpeedChange, 2f, 8f);
-		    var addSpeed = jerry.Velocity * jerry.Speed * Time.fixedDeltaTime;
+		    jerry.Speed = Mathf.Clamp(jerry.Speed + randomSpeedChange, 1f, 16f);
+		    var addSpeed = jerry.Velocity * (jerry.Speed * Time.fixedDeltaTime);
 		    var position = jerry.Transform.position;
 		    var newPos = new Vector2(position.x, position.y) + addSpeed;
 		    
@@ -130,16 +135,16 @@ public class JerryManager : MonoBehaviour
     {
 	    if (!_inToggleCooldown)
 	    {
-		    _cacheJerryCertaintyChange = 0;
+		    _cacheJerryCountLevelDelta = 0;
 		    if (Input.GetKeyDown(KeyCode.RightArrow))
 		    {
-			    _cacheJerryCertaintyChange += 1;
+			    _cacheJerryCountLevelDelta += 1;
 		    }
 		    if (Input.GetKeyDown(KeyCode.LeftArrow))
 		    {
-			    _cacheJerryCertaintyChange -= 1;
+			    _cacheJerryCountLevelDelta -= 1;
 		    }
-		    if (_cacheJerryCertaintyChange != 0)
+		    if (_cacheJerryCountLevelDelta != 0)
 		    {
 			    StartCoroutine(CoolDownCoro());
 		    } 
@@ -147,15 +152,24 @@ public class JerryManager : MonoBehaviour
     }
 
 	void FixedUpdate() {
-		switch (_cacheJerryCertaintyChange)
+		switch (_cacheJerryCountLevelDelta)
 		{
 			case 1:
-				DuplicateJerries();
-				_cacheJerryCertaintyChange = 0;
+				if (_jerryCountLevel < _maxJerryCountLevel)
+				{
+					DuplicateJerries();
+					_cacheJerryCountLevelDelta = 0;
+					_jerryCountLevel += 1;
+				}
 				break;
 			case -1:
-				DecimateJerries();
-				_cacheJerryCertaintyChange = 0;
+				if (_jerryCountLevel > _minJerryCountLevel)
+				{
+					DecimateJerries();
+					_cacheJerryCountLevelDelta = 0;
+					_jerryCountLevel -= 1;
+				}
+
 				break;
 		}
 		UpdateJerryPositions();

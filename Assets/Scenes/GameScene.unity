@@ -143,6 +143,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DuplicateTopRight
       objectReference: {fileID: 0}
+    - target: {fileID: 911015631860716601, guid: 2f11a3f7862a86841920ece20819aea0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1468220177, guid: aa79ff998bce17a45a5c94d2d5c0a700, type: 3}
     - target: {fileID: 1767966376710782930, guid: 2f11a3f7862a86841920ece20819aea0, type: 3}
       propertyPath: m_Sprite
       value: 
