@@ -7,9 +7,9 @@ using System;
 
 public class PlayButton : MonoBehaviour
 {
+    // Start is called before the first frame update
     [SerializeField] string gameSceneName = "GameScene";
 
-    // Start is called before the first frame update
     void Start()
     {
         

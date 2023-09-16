@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
         if (HasWon())
         {
             onWin.Invoke();
+            SceneManager.LoadScene("WinScene");
         }
 
         UpdateTimerSlider();
