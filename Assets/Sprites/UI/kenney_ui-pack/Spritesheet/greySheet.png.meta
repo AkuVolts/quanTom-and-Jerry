@@ -277,6 +277,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: IconBG
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 34
+        width: 49
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d181adb46a2314e4a9709bdf02806ce0
+      internalID: 1488371093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -292,6 +313,7 @@ TextureImporter:
       ButtonUnpressed: -1498337859
       CheckButton: 1593223245
       CloseButton: -509362126
+      IconBG: 1488371093
       PanelBG: 513878932
       PauseButton: -1354233314
       SliderBackground: -1662489760
