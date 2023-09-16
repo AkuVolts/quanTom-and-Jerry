@@ -367,6 +367,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ----- GameplaySystem -----
       objectReference: {fileID: 0}
+    - target: {fileID: 7836383602404047286, guid: 2f11a3f7862a86841920ece20819aea0, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836383602404047286, guid: 2f11a3f7862a86841920ece20819aea0, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -3088556292234358510, guid: 216b5d75ccbf43a4cb78cc8eb57d5a52, type: 2}
     - target: {fileID: 8195836351889364927, guid: 2f11a3f7862a86841920ece20819aea0, type: 3}
       propertyPath: m_Size.x
       value: 2.2040815

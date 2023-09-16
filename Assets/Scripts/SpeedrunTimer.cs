@@ -14,7 +14,12 @@ public class SpeedrunTimer : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        timerText.text = $"{timer.ToString("F2")}";
+
+        // add <mspace> tagg to the text to add a monospace font
+        //timerText.text = "<mspace=0.85em>" + ((int)timer) + "</mspace>" + "." + "<mspace=0.85em>" + ((int)(timer * 100) % 100).ToString() + "</mspace>";
+        var timerString = Mathf.Repeat(timer, 1f).ToString();
+        var timerLen = timerString.Length;
+        timerText.text = "<mspace=0.85em>" + ((int)timer) + "</mspace>" + "." + "<mspace=0.85em>" + timerString.Substring(2, 2) + "</mspace>";
     }
 
     public void StopTimer()

@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pausePanel;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] private AudioMixer audioMixer;
     bool isPaused = false;
 
     void Update()
@@ -33,6 +35,6 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1f;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("ControllerTest");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
 }

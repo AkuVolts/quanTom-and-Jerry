@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class JerryAudio : MonoBehaviour
 {
-    AudioSource audioSource;
-    
-    void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+    [SerializeField] private AudioSource audioSource;
 
     void OnEnable()
     {
         PlayerController.OnJerryEnter += PlayAudio;
         PlayerController.OnJerryExit += StopAudio;
+    }
+
+    void OnDisable()
+    {
+        PlayerController.OnJerryEnter -= PlayAudio;
+        PlayerController.OnJerryExit -= StopAudio;
     }
 
     public void PlayAudio()

@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 2385170873325602208}
   audioSource: {fileID: 1972375132361349849}
+  audioMixer: {fileID: 24100000, guid: 216b5d75ccbf43a4cb78cc8eb57d5a52, type: 2}
 --- !u!82 &1972375132361349849
 AudioSource:
   m_ObjectHideFlags: 0
@@ -215,11 +216,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 282692976022554329, guid: c62f4b3be125f0a4592ff534f27be006, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1450.5687
+      value: 1430
       objectReference: {fileID: 0}
     - target: {fileID: 282692976022554329, guid: c62f4b3be125f0a4592ff534f27be006, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 391.09924
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 282692976022554329, guid: c62f4b3be125f0a4592ff534f27be006, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
