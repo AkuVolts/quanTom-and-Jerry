@@ -281,6 +281,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 764463033815730573, guid: a4380233f259f4647b3919144606a314, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 764463033815730573, guid: a4380233f259f4647b3919144606a314, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 764463033815730573, guid: a4380233f259f4647b3919144606a314, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 764463033815730573, guid: a4380233f259f4647b3919144606a314, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2226628960774079844, guid: a4380233f259f4647b3919144606a314, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -361,6 +377,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4334954246970741131, guid: a4380233f259f4647b3919144606a314, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1214737763, guid: 146b2248fa1d30d46beed6a7a260da1a, type: 3}
+    - target: {fileID: 5625436970406907937, guid: a4380233f259f4647b3919144606a314, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625436970406907937, guid: a4380233f259f4647b3919144606a314, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625436970406907937, guid: a4380233f259f4647b3919144606a314, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625436970406907937, guid: a4380233f259f4647b3919144606a314, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625436970406907937, guid: a4380233f259f4647b3919144606a314, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 98.98999
+      objectReference: {fileID: 0}
     - target: {fileID: 8321773933651533419, guid: a4380233f259f4647b3919144606a314, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -368,6 +408,10 @@ PrefabInstance:
     - target: {fileID: 8321773933651533419, guid: a4380233f259f4647b3919144606a314, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515480465196811991, guid: a4380233f259f4647b3919144606a314, type: 3}
+      propertyPath: m_Name
+      value: TimerSlider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
