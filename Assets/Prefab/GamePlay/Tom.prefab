@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3188876194457881466}
   - component: {fileID: 4758186349981722287}
   - component: {fileID: 7224529450716564783}
+  - component: {fileID: 9155101651404730264}
   m_Layer: 0
   m_Name: DuplicateRight
   m_TagString: Untagged
@@ -120,6 +121,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &9155101651404730264
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880104270273079972}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2645b1329ebe3444a546c90ef793653, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1622752703162466339
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +153,7 @@ GameObject:
   - component: {fileID: 5816606755095066836}
   - component: {fileID: 1461703499593385444}
   - component: {fileID: 3598460666881015963}
+  - component: {fileID: 7413825725898803384}
   m_Layer: 0
   m_Name: DuplicateLeft (1)
   m_TagString: Untagged
@@ -240,6 +263,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7413825725898803384
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622752703162466339}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2645b1329ebe3444a546c90ef793653, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1668706819194926866
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +295,7 @@ GameObject:
   - component: {fileID: 3312422068400183795}
   - component: {fileID: 7589856422986479147}
   - component: {fileID: 2283148431549144136}
+  - component: {fileID: 8185285193362763833}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -360,6 +405,27 @@ CapsuleCollider2D:
   m_Offset: {x: -0.008188099, y: -0.0028079152}
   m_Size: {x: 0.99128455, y: 1.9718088}
   m_Direction: 0
+--- !u!95 &8185285193362763833
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668706819194926866}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2645b1329ebe3444a546c90ef793653, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1935093208986122577
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +483,16 @@ MonoBehaviour:
   speed: 5
   sprintSpeed: 10
   rb: {fileID: 7281307135438514229}
+  anim:
+  - {fileID: 8185285193362763833}
+  - {fileID: 7149108889840175753}
+  - {fileID: 1267555642722770455}
+  - {fileID: 9155101651404730264}
+  - {fileID: 2141395712089540938}
+  - {fileID: 7070120386378530876}
+  - {fileID: 7413825725898803384}
+  - {fileID: 2323142408907708269}
+  - {fileID: 2491384923675671937}
   rend: {fileID: 7589856422986479147}
   duplicateLeft: {fileID: 6027830030881602077}
   duplicateRight: {fileID: 880104270273079972}
@@ -466,6 +542,7 @@ GameObject:
   - component: {fileID: 4153947642390284771}
   - component: {fileID: 7412723407781449658}
   - component: {fileID: 5295212465726411235}
+  - component: {fileID: 7149108889840175753}
   m_Layer: 0
   m_Name: DuplicateTop
   m_TagString: Untagged
@@ -575,6 +652,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7149108889840175753
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006249489671514702}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2645b1329ebe3444a546c90ef793653, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2352393615098396742
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,6 +684,7 @@ GameObject:
   - component: {fileID: 7090754565287453677}
   - component: {fileID: 7373200309401904737}
   - component: {fileID: 779269388910178461}
+  - component: {fileID: 7070120386378530876}
   m_Layer: 0
   m_Name: DuplicateTop (1)
   m_TagString: Untagged
@@ -695,6 +794,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7070120386378530876
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2352393615098396742}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2645b1329ebe3444a546c90ef793653, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3199588022209910270
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,6 +826,7 @@ GameObject:
   - component: {fileID: 6538604539300565462}
   - component: {fileID: 7995036249901936217}
   - component: {fileID: 3251304246612417896}
+  - component: {fileID: 2491384923675671937}
   m_Layer: 0
   m_Name: DuplicateBottom (1)
   m_TagString: Untagged
@@ -815,6 +936,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2491384923675671937
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199588022209910270}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2645b1329ebe3444a546c90ef793653, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6027830030881602077
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,6 +968,7 @@ GameObject:
   - component: {fileID: 7394717242187191469}
   - component: {fileID: 462853893258902283}
   - component: {fileID: 3996154352705287083}
+  - component: {fileID: 1267555642722770455}
   m_Layer: 0
   m_Name: DuplicateLeft
   m_TagString: Untagged
@@ -935,6 +1078,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1267555642722770455
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6027830030881602077}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2645b1329ebe3444a546c90ef793653, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7101515757567301357
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,6 +1110,7 @@ GameObject:
   - component: {fileID: 605523811418268511}
   - component: {fileID: 6612083960172900322}
   - component: {fileID: 8080781740283496082}
+  - component: {fileID: 2141395712089540938}
   m_Layer: 0
   m_Name: DuplicateBottom
   m_TagString: Untagged
@@ -1055,6 +1220,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2141395712089540938
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7101515757567301357}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2645b1329ebe3444a546c90ef793653, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7431328388657431150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,6 +1252,7 @@ GameObject:
   - component: {fileID: 6635856573229216548}
   - component: {fileID: 5694698025722981010}
   - component: {fileID: 6396287232635824374}
+  - component: {fileID: 2323142408907708269}
   m_Layer: 0
   m_Name: DuplicateRight (1)
   m_TagString: Untagged
@@ -1175,3 +1362,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2323142408907708269
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7431328388657431150}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2645b1329ebe3444a546c90ef793653, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

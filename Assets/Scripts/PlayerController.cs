@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float speed = 5f;
     [SerializeField] float sprintSpeed = 10f;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] List<Animator> anim;
 
     [SerializeField] SpriteRenderer rend;
     [SerializeField] GameObject duplicateLeft;
@@ -74,11 +76,13 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.ClampMagnitude(new Vector2(horizontal, vertical) * speed, speed);
         }
 
-        // Rotate GameObject in direction of movement
-        if (rb.velocity.magnitude > 0)
-        {
-            rend.transform.up = rb.velocity;
-        }
+        // // Rotate GameObject in direction of movement
+        // if (rb.velocity.magnitude > 0)
+        // {
+        //     rend.transform.up = rb.velocity;
+        // }
+
+
         Vector2 normalizedPos = new Vector2(rb.transform.position.x, rb.transform.position.y) - new Vector2(_leftXExtent, _bottomYExtent);
 
         normalizedPos.x = Mathf.Repeat(normalizedPos.x, _screenWidth);
@@ -88,16 +92,17 @@ public class PlayerController : MonoBehaviour
 
         rb.transform.position = new Vector3(newPos.x, newPos.y, 0f);
 
-        // set duplicate rotation the same as original
-        duplicateBottom.transform.rotation = rend.transform.rotation;
-        duplicateTop.transform.rotation = rend.transform.rotation;
-        duplicateLeft.transform.rotation = rend.transform.rotation;
-        duplicateRight.transform.rotation = rend.transform.rotation;
-        duplicateBottomLeft.transform.rotation = rend.transform.rotation;
-        duplicateBottomRight.transform.rotation = rend.transform.rotation;
-        duplicateTopLeft.transform.rotation = rend.transform.rotation;
-        duplicateTopRight.transform.rotation = rend.transform.rotation;
+        // // set duplicate rotation the same as original
+        // duplicateBottom.transform.rotation = rend.transform.rotation;
+        // duplicateTop.transform.rotation = rend.transform.rotation;
+        // duplicateLeft.transform.rotation = rend.transform.rotation;
+        // duplicateRight.transform.rotation = rend.transform.rotation;
+        // duplicateBottomLeft.transform.rotation = rend.transform.rotation;
+        // duplicateBottomRight.transform.rotation = rend.transform.rotation;
+        // duplicateTopLeft.transform.rotation = rend.transform.rotation;
+        // duplicateTopRight.transform.rotation = rend.transform.rotation;
 
+        UpdateAnimation();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -109,5 +114,43 @@ public class PlayerController : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
         onJerry = false;
+    }
+
+    void UpdateAnimation()
+    {
+        // Active Side, Back, or Front animation trigger based on direction of movement
+        if (rb.velocity.magnitude > 0)
+        {
+            foreach (var a in anim)
+            {
+                // Check if vertical velocity is larger or horizontal 
+                if (Mathf.Abs(rb.velocity.y) > Mathf.Abs(rb.velocity.x))
+                {
+                    // Check if vertical velocity is positive or negative
+                    if (rb.velocity.y > 0)
+                    {
+                        a.Play("Back");
+                    }
+                    else
+                    {
+                        a.Play("Front");
+                    }
+                }
+                else
+                {
+                    a.Play("Side");
+                    // flip the sprite if moving left
+                    if (rb.velocity.x > 0)
+                    {
+                        rend.flipX = true;
+                    }
+                    else
+                    {
+                        rend.flipX = false;
+                    }
+                }
+                a.speed = rb.velocity.magnitude / 3;
+            }
+        }
     }
 }
