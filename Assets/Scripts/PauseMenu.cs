@@ -5,12 +5,14 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pausePanel;
+    [SerializeField] AudioSource audioSource;
     bool isPaused = false;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            audioSource.PlayOneShot(audioSource.clip);
             TogglePause();
         }
     }
