@@ -13,11 +13,49 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
 
     [SerializeField] SpriteRenderer rend;
+    [SerializeField] GameObject duplicateLeft;
+    [SerializeField] GameObject duplicateRight;
+    [SerializeField] GameObject duplicateTop;
+    [SerializeField] GameObject duplicateBottom;
+    [SerializeField] GameObject duplicateTopLeft;
+    [SerializeField] GameObject duplicateTopRight;
+    [SerializeField] GameObject duplicateBottomLeft;
+    [SerializeField] GameObject duplicateBottomRight;
+
+
+
+    public Transform topLeftAnchor;
+    public Transform bottomRightAnchor;
+
+    private float _screenWidth;
+    private float _screenHeight;
+    private float _leftXExtent;
+    private float _rightXExtent;
+    private float _topYExtent;
+    private float _bottomYExtent;
 
     // Start is called before the first frame update
     void Start()
     {
+        var topLeftPos = topLeftAnchor.position;
+        var topRightPos = bottomRightAnchor.position;
 
+        _leftXExtent = topLeftPos.x;
+        _rightXExtent = topRightPos.x;
+        _topYExtent = topLeftPos.y;
+        _bottomYExtent = topRightPos.y;
+
+        _screenWidth = _rightXExtent - _leftXExtent;
+        _screenHeight = _topYExtent - _bottomYExtent;
+
+        duplicateBottom.transform.localPosition = new Vector3(0f, _bottomYExtent - _topYExtent, 0f);
+        duplicateTop.transform.localPosition = new Vector3(0f, _topYExtent - _bottomYExtent, 0f);
+        duplicateLeft.transform.localPosition = new Vector3(_leftXExtent - _rightXExtent, 0f, 0f);
+        duplicateRight.transform.localPosition = new Vector3(_rightXExtent - _leftXExtent, 0f, 0f);
+        duplicateBottomLeft.transform.localPosition = new Vector3(_leftXExtent - _rightXExtent, _bottomYExtent - _topYExtent, 0f);
+        duplicateBottomRight.transform.localPosition = new Vector3(_rightXExtent - _leftXExtent, _bottomYExtent - _topYExtent, 0f);
+        duplicateTopLeft.transform.localPosition = new Vector3(_leftXExtent - _rightXExtent, _topYExtent - _bottomYExtent, 0f);
+        duplicateTopRight.transform.localPosition = new Vector3(_rightXExtent - _leftXExtent, _topYExtent - _bottomYExtent, 0f);
     }
 
     // Update is called once per frame
@@ -41,6 +79,25 @@ public class PlayerController : MonoBehaviour
         {
             rend.transform.up = rb.velocity;
         }
+        Vector2 normalizedPos = new Vector2(rb.transform.position.x, rb.transform.position.y) - new Vector2(_leftXExtent, _bottomYExtent);
+
+        normalizedPos.x = Mathf.Repeat(normalizedPos.x, _screenWidth);
+        normalizedPos.y = Mathf.Repeat(normalizedPos.y, _screenHeight);
+
+        var newPos = normalizedPos + new Vector2(_leftXExtent, _bottomYExtent);
+
+        rb.transform.position = new Vector3(newPos.x, newPos.y, 0f);
+
+        // set duplicate rotation the same as original
+        duplicateBottom.transform.rotation = rend.transform.rotation;
+        duplicateTop.transform.rotation = rend.transform.rotation;
+        duplicateLeft.transform.rotation = rend.transform.rotation;
+        duplicateRight.transform.rotation = rend.transform.rotation;
+        duplicateBottomLeft.transform.rotation = rend.transform.rotation;
+        duplicateBottomRight.transform.rotation = rend.transform.rotation;
+        duplicateTopLeft.transform.rotation = rend.transform.rotation;
+        duplicateTopRight.transform.rotation = rend.transform.rotation;
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
