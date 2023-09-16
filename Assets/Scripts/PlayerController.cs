@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class PlayerController : MonoBehaviour
 {
     bool onJerry = false;
     public bool OnJerry => onJerry;
+    public static event Action OnJerryEnter;
+    public static event Action OnJerryExit;
 
     [SerializeField] float speed = 5f;
     [SerializeField] float sprintSpeed = 10f;
@@ -104,10 +107,12 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Entered trigger");
         onJerry = true;
+        OnJerryEnter?.Invoke();
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         onJerry = false;
+        OnJerryExit?.Invoke();
     }
 }
