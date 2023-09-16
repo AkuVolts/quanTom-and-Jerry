@@ -31,11 +31,11 @@ public class GameManager : MonoBehaviour
 
     public void UpdateTimer()
     {
-        if (true)
+        if (player.OnJerry)
         {
             timer += Time.deltaTime;
         }
-        else if (true)
+        else
         {
             timer -= Time.deltaTime * decreaseRate;
         }
