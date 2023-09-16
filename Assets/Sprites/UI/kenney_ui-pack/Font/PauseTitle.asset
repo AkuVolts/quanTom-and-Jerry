@@ -11,9 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - GLOW_ON
-  - UNDERLAY_ON
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -72,7 +70,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0.262
+    - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.8333333
@@ -120,11 +118,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Title
+  m_Name: PauseTitle
   m_EditorClassIdentifier: 
-  hashCode: 98732960
+  hashCode: 962914226
   material: {fileID: -196340762811997558}
-  materialHashCode: -1757382272
+  materialHashCode: -1164363182
   m_Version: 1.1.0
   m_SourceFontFileGUID: 569a52b6d3ded7343b1076f12173d070
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 569a52b6d3ded7343b1076f12173d070, type: 3}
