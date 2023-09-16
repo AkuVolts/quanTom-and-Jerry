@@ -1,8 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,8 +11,10 @@ public class GameManager : MonoBehaviour
     float timer = 0f;
 
     [SerializeField] PlayerController player;
-    
+
     [SerializeField] UnityEvent onWin;
+
+    [SerializeField] Slider timerSlider;
 
     void Awake()
     {
@@ -24,8 +24,13 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
+    }
+
+    private void Update()
+    {
+        UpdateTimer();
     }
 
     public void UpdateTimer()
@@ -37,15 +42,23 @@ public class GameManager : MonoBehaviour
         else
         {
             timer -= Time.deltaTime * decreaseRate;
+            timer = Mathf.Clamp(timer, 0f, timeToWin);
         }
         if (HasWon())
         {
             onWin.Invoke();
         }
+
+        UpdateTimerSlider();
     }
 
     public bool HasWon()
     {
         return timer >= timeToWin;
+    }
+
+    private void UpdateTimerSlider()
+    {
+        timerSlider.value = timer / timeToWin;
     }
 }

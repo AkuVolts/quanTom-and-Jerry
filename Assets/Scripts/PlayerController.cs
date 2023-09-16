@@ -9,14 +9,15 @@ public class PlayerController : MonoBehaviour
     public bool OnJerry => onJerry;
 
     [SerializeField] float speed = 5f;
+    [SerializeField] float sprintSpeed = 10f;
     [SerializeField] Rigidbody2D rb;
 
     [SerializeField] SpriteRenderer rend;
-    
+
     // Start is called before the first frame update
-    void Start() 
+    void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,17 +25,27 @@ public class PlayerController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal"); // -1 to 1
         float vertical = Input.GetAxis("Vertical"); // -1 to 1
-        rb.velocity = Vector2.ClampMagnitude(new Vector2(horizontal, vertical) * speed, speed); 
-        
+        bool isSprinting = Input.GetKey(KeyCode.LeftShift);
+
+        if (isSprinting)
+        {
+            rb.velocity = Vector2.ClampMagnitude(new Vector2(horizontal, vertical) * sprintSpeed, sprintSpeed);
+        }
+        else
+        {
+            rb.velocity = Vector2.ClampMagnitude(new Vector2(horizontal, vertical) * speed, speed);
+        }
+
         // Rotate GameObject in direction of movement
         if (rb.velocity.magnitude > 0)
         {
             rend.transform.up = rb.velocity;
         }
     }
-    
+
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Entered trigger");
         onJerry = true;
     }
 
