@@ -307,10 +307,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7598645273634079913, guid: 2f11a3f7862a86841920ece20819aea0, type: 3}
-      propertyPath: m_Value
-      value: 0.75
-      objectReference: {fileID: 0}
     - target: {fileID: 7729380611261564891, guid: 2f11a3f7862a86841920ece20819aea0, type: 3}
       propertyPath: m_Name
       value: ----- GameplaySystem -----
