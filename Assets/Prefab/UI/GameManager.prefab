@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec03a169f7347b14db97ca1a5dc4810d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWin: 10
+  timeToWin: 2
   decreaseRate: 1
   player: {fileID: 0}
   onWin:
@@ -65,8 +65,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minLevel: 0
-  maxLevel: 8
+  maxLevel: 6
   positionSlider: {fileID: 0}
   momentumSlider: {fileID: 0}
-  positionLevel: 0
-  momentumLevel: 8
+  positionLevel: 6
+  momentumLevel: 0

@@ -11,8 +11,9 @@ public class JerryManager : MonoBehaviour
 	private int _cacheJerryCountLevelDelta;
 
 	private int _jerryCountLevel = 1;
+	public int JerryCountLevelMinusOne => _jerryCountLevel - 1;
 
-	private int _maxJerryCountLevel = 5;
+	private int _maxJerryCountLevel = 7;
 	private int _minJerryCountLevel = 1;
 
 	public Transform topLeftAnchor;
@@ -94,7 +95,8 @@ public class JerryManager : MonoBehaviour
 
     private void DuplicateJerries()
     {
-	    int jerryCount = _jerries.Count;
+	    Debug.Log("Duplicating Jerries");
+		int jerryCount = _jerries.Count;
 	    for (int i = 0; i < jerryCount; i++)
 	    {
 		    var newJerryObject = Instantiate(jerryPrefab, gameObject.transform);
@@ -111,7 +113,8 @@ public class JerryManager : MonoBehaviour
 
     private void DecimateJerries()
     {
-	    var rnd = new System.Random();
+	    Debug.Log("Decimating Jerries");
+		var rnd = new System.Random();
 	    var jerriesToDelete = _jerries
 		    .Skip(1)
 		    .OrderBy(x => rnd.Next())
@@ -136,13 +139,13 @@ public class JerryManager : MonoBehaviour
 	    if (!_inToggleCooldown)
 	    {
 		    _cacheJerryCountLevelDelta = 0;
-		    if (Input.GetKeyDown(KeyCode.RightArrow))
-		    {
-			    _cacheJerryCountLevelDelta += 1;
-		    }
-		    if (Input.GetKeyDown(KeyCode.LeftArrow))
+		    if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.P))
 		    {
 			    _cacheJerryCountLevelDelta -= 1;
+		    }
+		    if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.O))
+		    {
+			    _cacheJerryCountLevelDelta += 1;
 		    }
 		    if (_cacheJerryCountLevelDelta != 0)
 		    {

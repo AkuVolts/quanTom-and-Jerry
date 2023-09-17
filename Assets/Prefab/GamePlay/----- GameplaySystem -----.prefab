@@ -992,6 +992,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4062840855621772679}
     m_Modifications:
     - target: {fileID: 6096259429793060101, guid: 3e2d66a6730dee54797ef5f88f24c4f8, type: 3}
+      propertyPath: jerryManager
+      value: 
+      objectReference: {fileID: 4450025447952256476}
+    - target: {fileID: 6096259429793060101, guid: 3e2d66a6730dee54797ef5f88f24c4f8, type: 3}
       propertyPath: momentumSlider
       value: 
       objectReference: {fileID: 3312878662744546565}
