@@ -30,6 +30,9 @@ public class JerryManager : MonoBehaviour
 
 	[SerializeField] private GameObject trueJerry;
 
+	[SerializeField] AudioSource audioSource;
+	[SerializeField] AudioClip cycleSound;
+
 	class Jerry
 	{
 		public Transform Transform;
@@ -142,10 +145,12 @@ public class JerryManager : MonoBehaviour
 		    if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.P))
 		    {
 			    _cacheJerryCountLevelDelta -= 1;
+				audioSource.PlayOneShot(cycleSound);
 		    }
 		    if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.O))
 		    {
 			    _cacheJerryCountLevelDelta += 1;
+				audioSource.PlayOneShot(cycleSound);
 		    }
 		    if (_cacheJerryCountLevelDelta != 0)
 		    {

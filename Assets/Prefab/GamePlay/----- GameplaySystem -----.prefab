@@ -525,6 +525,7 @@ MonoBehaviour:
   bottomRightAnchor: {fileID: 6210148864567579401}
   jerryPrefab: {fileID: 6004245794983781735, guid: edd32f96d3512c8bb92ffb57da536a6d, type: 3}
   trueJerry: {fileID: 2846698081157239016}
+  cycleSound: {fileID: 8300000, guid: b1c1fc5a37b6dc640b3410be71c0600e, type: 3}
 --- !u!1 &6716357893316821815
 GameObject:
   m_ObjectHideFlags: 0
