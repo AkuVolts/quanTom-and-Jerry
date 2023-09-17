@@ -267,6 +267,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4450025447952256476, guid: 2f11a3f7862a86841920ece20819aea0, type: 3}
+      propertyPath: coolDownTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4610687765339406186, guid: 2f11a3f7862a86841920ece20819aea0, type: 3}
       propertyPath: m_Name
       value: DuplicateTopLeft
