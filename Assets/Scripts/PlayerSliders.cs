@@ -18,11 +18,11 @@ public class PlayerSliders : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.O) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             positionLevel = Mathf.Clamp(positionLevel - 1, minLevel, maxLevel);
         }
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             positionLevel = Mathf.Clamp(positionLevel + 1, minLevel, maxLevel);
         }
